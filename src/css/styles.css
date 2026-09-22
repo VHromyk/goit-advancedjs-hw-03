@@ -174,7 +174,7 @@ img {
 
   width: calc(48 * var(--size));
   height: calc(48 * var(--size));
-  display: block;
+  display: none;
   margin: calc(15 * var(--size)) auto;
   position: relative;
   color: var(--color-1);
@@ -216,4 +216,8 @@ img {
   50% {
     transform: scale(1);
   }
+}
+
+.loader.is-shown {
+  display: block;
 }

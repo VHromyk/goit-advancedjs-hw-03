@@ -3,7 +3,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryRef = document.querySelector('.gallery');
-const loaderRef = document.querySelector('[data-loader]');
+const loaderRef = document.querySelector('.loader');
 
 function createGallery(images) {
   const markup = images.map(
@@ -35,11 +35,11 @@ function clearGallery() {
 }
 
 function showLoader() {
-  loaderRef.classList.add('loader');
+  loaderRef.classList.add('is-shown');
 }
 
 function hideLoader() {
-  loaderRef.classList.remove('loader');
+  loaderRef.classList.remove('is-shown');
 }
 
 export { createGallery, clearGallery, showLoader, hideLoader };
