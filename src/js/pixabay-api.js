@@ -1,5 +1,4 @@
 import axios from 'axios';
-import iziToast from 'izitoast';
 
 export function getImagesByQuery(query) {
   const searchQuery = new URLSearchParams({
@@ -12,16 +11,5 @@ export function getImagesByQuery(query) {
 
   return axios
     .get(`https://pixabay.com/api/?q=${searchQuery}`)
-    .then(({ data }) => {
-      if (!data.hits.length) {
-        iziToast.show({
-          message:
-            'Sorry, there are no images matching your search query. Please try again!',
-          color: 'yellow',
-        });
-      }
-
-      return data.hits;
-    })
-    .catch(error => console.log(error));
+    .then(({ data }) => data.hits);
 }
