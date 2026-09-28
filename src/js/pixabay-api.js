@@ -10,6 +10,6 @@ export function getImagesByQuery(query) {
   });
 
   return axios
-    .get(`https://pixabay.com/api/?q=${searchQuery}`)
+    .get(`https://pixabay.com/api/?${searchQuery}`)
     .then(({ data }) => data.hits);
 }
